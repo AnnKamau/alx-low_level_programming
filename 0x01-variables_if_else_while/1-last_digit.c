@@ -1,5 +1,7 @@
 #include <stdlib.h>
+
 #include <time.h>
+
 #include <stdio.h>
 /**
  * main - Prints a text according to numbers
@@ -10,7 +12,7 @@ int main(void)
 	int m, lastd;
 
 	srand(time(0));
-	n = rand() - RAND_MAX / 2;
+	m = rand() - RAND_MAX / 2;
 	lastd = n % 10;
 
 	if (lastd > 5)

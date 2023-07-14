@@ -1,6 +1,9 @@
 #include <stlib.h>
+
 #include <time.h>
+
 #include <stdio.h>
+
 /**
  * main - A program that prints if number is positive, zero or negative
  * Return: Always (Succesful)

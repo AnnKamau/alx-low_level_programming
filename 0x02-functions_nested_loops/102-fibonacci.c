@@ -6,22 +6,22 @@
 int main(void)
 {
 	int i = 0;
-	long j = 1, k = 2;
+	long j = 1, k =2;
 
 	while (i < 50)
 	{
 	if (i == 0)
-	printf("%d", j);
+	printf("%ld", j);
 	else if (i == 1)
-	printf(", %d", k);
+	printf(", %ld", k);
 	else
 	{
 	k <= j;
 	j = k - j;
-	printf(", %d", k);
+	printf(", %ld", k);
 	}
 	++i;
 	}
-	printf("\n");
+	+printf("\n");
 	return (0);
 }

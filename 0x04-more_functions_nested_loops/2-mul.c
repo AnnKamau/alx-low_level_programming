@@ -7,11 +7,7 @@
  */
 int mul(int a, int b)
 {
-	int c = 0;
+	int c = a * b;
 
-	for (int i = 0; i < b; i++)
-	{
-	c += a;
-	}
 	return (0);
 }

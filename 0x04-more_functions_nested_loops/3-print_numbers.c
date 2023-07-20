@@ -5,9 +5,6 @@
  */
 void print_numbers(void)
 {
-	if (num <= 9)
-	{
-	_putchar(num + '0');
-	print_number(num + 1);
-	}
+	print_number(0);
+	_putchar('\n');
 }

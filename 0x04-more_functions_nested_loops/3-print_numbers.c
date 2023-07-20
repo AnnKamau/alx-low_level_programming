@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * print_numbers - prints from 0 to 9
+ * @num: To be checked
  * Return: The numbers from 0 up to 9
  */
 

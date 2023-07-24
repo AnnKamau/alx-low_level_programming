@@ -6,6 +6,7 @@
  */
 
 int _atoi(char *s)
+
 {
 	int c = 0;
 	unsigned int ni = 0;
@@ -28,7 +29,7 @@ int _atoi(char *s)
 	{
 	break;
 	}
-	c++
+	c++;
 	}
 	ni *= min;
 	return (ni);

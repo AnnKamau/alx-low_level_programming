@@ -17,21 +17,16 @@ char *leet(char *s)
 	{
 	j = 0;
 	k = 0;
-
 	while (l[j] != '\0')
 	{
-
 	if (s[i] == l[j])
 	{
-
 	k = j;
 	s[i] = e[k];
 	}
-
 	j++;
 	}
 	i++;
 	}
-
 	return (s);
 }

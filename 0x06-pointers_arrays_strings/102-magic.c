@@ -1,5 +1,8 @@
 #include <stdio.h>
-
+/**
+ * main - prints a[2] = 98, followed by a new line
+ * Return: Always 0
+ */
 int main(void)
 {
 	int n;
@@ -9,7 +12,6 @@ int main(void)
 	a[2] = 1024;
 	p = &n;
 /*
- * main - prints a[2] = 98, followed by a new line
 * write your line of code here...
 * Remember:
 * - you are not allowed to use a

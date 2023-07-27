@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
  * print_buffer - prints a buffer
  * @b: The buffer
@@ -27,7 +26,7 @@ void print_buffer(char *b, int size)
 	if (i < j)
 		printf("%02x", *(b + o + i));
 	else
-	printf(" ");
+	printf("  ");
 	if (i % 2)
 	{
 		printf(" ");
@@ -46,5 +45,4 @@ void print_buffer(char *b, int size)
 	printf("\n");
 	o += 10;
 	}
-	return;
 }

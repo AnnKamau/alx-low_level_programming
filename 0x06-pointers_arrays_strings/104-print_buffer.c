@@ -11,7 +11,6 @@
 void print_buffer(char *b, int size)
 {
 	int j, i;
-
 	int o = 0;
 
 	if (size <= 0)

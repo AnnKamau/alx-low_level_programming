@@ -2,11 +2,11 @@
 
 /**
  * infinite_add - function that adds two numbers
- * @n1: First number
- * @n2: Second number
- * @r:  buffer that the function will use to store the result
- * @size_r: The buffer size
- * Return: r
+ * @n1: Pointer to first character of number 1
+ * @n2: Pointer to first character of number 2
+ * @r:  Buffer that the function will use to store the result
+ * @size_r: Buffer size
+ * Return: pointer to result
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
@@ -45,8 +45,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	i--;
 	}
 	if (digits == size_r)
-		return (0);
+	return (0);
 	*(r + digits) = '\0';
-
 	return (r);
 }

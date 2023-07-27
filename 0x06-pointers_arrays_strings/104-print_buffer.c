@@ -1,18 +1,18 @@
 #include "main.h"
 #include <stdio.h>
-#include <math.h>
+
 /**
  * print_buffer - prints a buffer
  * @b: The buffer pointed by b
  * @size: print the content of size bytes
- * Return: If size is 0 or less, the output should be a new line only \n
+ * Return: void
  */
 
 void print_buffer(char *b, int size)
 {
-	int o, j, i
+	int j, i;
 
-	o = 0;
+	int o = 0;
 
 	if (size <= 0)
 	{

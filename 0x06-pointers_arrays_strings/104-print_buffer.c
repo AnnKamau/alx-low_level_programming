@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <math.h>
 /**
  * print_buffer - prints a buffer
  * @b: The buffer pointed by b

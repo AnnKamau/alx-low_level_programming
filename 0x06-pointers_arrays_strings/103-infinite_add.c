@@ -1,7 +1,6 @@
 #include "main.h"
-#include <math.h>
-#include <time.h>
 #include <stdio.h>
+#include <math.h>
 /**
  * infinite_add - function that adds two numbers
  * @n1: Pointer to first character of number 1

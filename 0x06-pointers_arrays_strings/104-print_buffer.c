@@ -3,8 +3,8 @@
 
 /**
  * print_buffer - prints a buffer
- * @b: The buffer pointed by b
- * @size: print the content of size bytes
+ * @b: The buffer
+ * @size: content size
  * Return: void
  */
 
@@ -21,7 +21,7 @@ void print_buffer(char *b, int size)
 	while (o < size)
 	{
 	j = size - o < 10 ? size - o : 10;
-	printf("%08x; ", o);
+	printf("%08x: ", o);
 	for (i = 0; i < 10; i++)
 	{
 	if (i < j)

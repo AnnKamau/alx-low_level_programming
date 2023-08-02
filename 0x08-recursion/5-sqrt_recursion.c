@@ -1,38 +1,32 @@
-#include "main.c"
+#include "main.h"
+#include <stdio.h>
+
 /**
  * _sqrt_recursion - returns the natural square root of a number
- * is_perfect_square - checks if number is a perfect square
  * @n: the number
- * @i: the value
  * Return: -1 if n has no natural square root
  */
 
-int is_perfect_square(int n, int = i)
-{
-
-	if (i == n)
-	{
-		return (i);
-	}
-	if (i > n)
-	{
-		return (-1);
-	}
-	if (i * i == n)
-	{
-		return (i);
-	}
-	else
-	{
-		return (is_perfect_square(n, i + 1));
-	}
-}
-
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
-	{
+	return (_sqrt(n, 1));
+}
+
+/**
+ * _sqrt - calculates natural square root
+ *  @n: number to calculate
+ *  @i: iterate number
+ *  Return: The natural square root
+ */
+int _sqrt(int n, int i)
+{
+	int sqrt = i * i;
+
+	if (sqrt > n)
 		return (-1);
-	}
-	return (is_perfect_square(n, 1));
+
+	if (sqrt == n)
+		return (i);
+
+	return (_sqrt(n, i + 1));
 }

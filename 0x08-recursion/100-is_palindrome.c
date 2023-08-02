@@ -26,12 +26,11 @@ int compare_chars(char *s, int i, int j)
 
 /**
  * is_palindrome - returns 1 if a string is a palindrome and 0 if not
- * _strlen_recursion - to get string
  * @s: the string
  * Return: 1 if string is a palindrome and 0 if not
  */
 
 int is_palindrome(char *s)
 {
-	return (compare_chars(s, 0, _strlen_recursion(s) - 1));
+	return (compare_chars(s, 0, s - 1));
 }

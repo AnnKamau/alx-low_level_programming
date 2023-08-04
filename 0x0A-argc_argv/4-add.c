@@ -4,9 +4,9 @@
 #include <string.h>
 
 /**
- * main - Prints the sum of args positive numbers
- * @args: argument count
- * @argv: argument vector
+ * main - Prints the sum of args
+ * @argc: argument count
+ * @argv: argumnet vector
  * Return: Always zero
  */
 
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		for (i = 1; i < argc; i++)
 		{
 			e = argv[i];
-			
+
 			for (k = 0; k < strlen(e); k++)
 			{
 				if (e[k] < 48 || e[k] > 57)

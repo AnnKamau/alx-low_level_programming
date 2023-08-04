@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * main - prints the sum of args positive numbers
+ * main - Prints the sum of args positive numbers
  * @args: argument count
  * @argv: argument vector
  * Return: Always zero

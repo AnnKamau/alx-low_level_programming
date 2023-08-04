@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
-#include <sdtlib.h>
-#include <type.h>
+#include <stdlib.h>
+#include <ctype.h>
 #include <string.h>
 
 int _islower(int c)

@@ -29,7 +29,7 @@ int is_number(char *s)
 
 int main(int argc, char *argv[])
 {
-	int num1, num2, product;
+	int num1, num2, mul;
 
 	if (argc != 3)
 	{
@@ -45,9 +45,9 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
 
-	product = num1 * num2;
+	mul = num1 * num2;
 
-	printf("%d\n", product);
+	printf("%d\n", mul);
 
 	return (0);
 }

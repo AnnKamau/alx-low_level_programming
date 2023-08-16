@@ -1,10 +1,11 @@
+#include "function_pointers.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
 
 /**
- * main - Entry point
- * @argc: number of arguments
+ * main - prints the results of simple operations
+ * @argc: number of arguments supplied to the program
  * @argv: array of strings containing the arguments
  * Return: Always 0 (Success)
  */
@@ -27,7 +28,7 @@ int main(int argc, char **argv)
 	if (num2 == 0 && (*operator == '/' || *operator == '%'))
 	{
 		printf("Error\n");
-		exit(100);
+		exit(99);
 	}
 
 	result = get_op_func(operator)(num1, num2);
@@ -35,7 +36,7 @@ int main(int argc, char **argv)
 	if (result == -1)
 	{
 		printf("Error\n");
-		exit(99);
+		exit(100);
 	}
 
 	printf("%d\n", result);

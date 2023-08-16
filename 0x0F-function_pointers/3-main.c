@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	operator = argv[2];
 	num2 = atoi(argv[3]);
 
-	if (num2 == 0 && (*operator == '/' || *operator == "%"))
+	if (num2 == 0 && (*operator == '/' || *operator == '%'))
 	{
 		printf("Error\n");
 		exit(100);

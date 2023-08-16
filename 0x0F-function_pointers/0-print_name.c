@@ -14,17 +14,3 @@ void print_name(char *name, void (*f)(char *))
 		f(name);
 	}
 }
-
-int main(void)
-{
-	void (*print_as_is)(char *);
-	void (*print_uppercase)(char *);
-
-	print_as_is = print_name_as_is;
-	print_uppercase = print_name_uppercase;
-
-	print_name("Bob", print_as_is);
-	print_name("Bob Dylan", print_uppercase);
-
-	return (0);
-}

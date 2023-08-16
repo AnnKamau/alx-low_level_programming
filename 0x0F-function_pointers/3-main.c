@@ -11,34 +11,26 @@
 
 int main(int argc, char **argv)
 {
-	int num1, num2, result;
-	char *operator;
+	int i, num_bytes;
 
-	if (argc != 4)
+	if (argc != 2)
 	{
 		printf("Error\n");
-		exit(98);
+		exit(1);
 	}
 
-	num1 = atoi(argv[1]);
-	operator = argv[2];
-	num2 = atoi(argv[3]);
+	num_bytes = atoi(argv[1]);
 
-	if (num2 == 0 && (*operator == '/' || *operator == '%'))
+	if (num_bytes < 0)
 	{
 		printf("Error\n");
-		exit(99);
+		exit(2);
 	}
 
-	result = get_op_func(operator)(num1, num2);
+	for (i = 0; i < num_bytes; i++)
+		printf("%02x ", *((unsigned char *)main + i));
 
-	if (result == -1)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-
-	printf("%d\n", result);
+	printf("\n");
 
 	return (0);
 }

@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
+#include <stdio.h>
 
 /**
  * print_all - prints anything
@@ -9,55 +10,49 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0;
-	char *sep = "";
-	char *str;
-	char c;
-	int n;
-	double f;
+	unsigned int i = 0;
+	char *separator = ", ";
+	char current_format;
 
 	va_start(args, format);
 
 	while (format && format[i])
 	{
-	switch (format[i])
-	{
-	case 'c':
-	c = va_arg(args, int);
+		current_format = format[i];
 
-	printf("%s%c", sep, c);
-	break;
+		switch (current_format)
+		{
+			case 'c':
+				printf("%s%c", separator, va_arg(args, int));
+				break;
 
-	case 'i':
-	n = va_arg(args, int);
+			case 'i':
+				printf("%s%d", separator, va_arg(args, int));
+				break;
 
-	printf("%s%d", sep, n);
-	break;
+			case 'f':
+				printf("%s%f", separator, va_arg(args, double));
+				break;
 
-	case 'f':
-	f = va_arg(args, double);
+			case 's':
+				{
+					char *str = va_arg(args, char *);
 
-	printf("%s%f", sep, f);
-	break;
+					if (str == NULL)
+						str = "(nil)";
+					printf("%s%s", separator, str);
+				}
+				break;
 
-	case 's':
-	str = va_arg(args, char *);
+			default:
+				i++;
+				continue;
+		}
 
-	if (str == NULL)
-	str = "(nil)";
-
-	printf("%s%s", sep, str);
-	break;
-
-	default:
 		i++;
-	continue;
 	}
-	sep = ", ";
-
-	i++;
-	}
-	printf("\n");
 
 	va_end(args);
+	
+	printf("\n");
 }

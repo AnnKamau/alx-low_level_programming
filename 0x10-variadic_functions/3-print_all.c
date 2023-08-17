@@ -5,42 +5,41 @@
 /**
  * print_all - prints anything
  * @format: list of types of arguments passed to the function
+ * @...: arguments
  */
 
 void print_all(const char * const format, ...)
 {
+	int i = 0, j = 0;
+	char *s;
 	va_list args;
-	unsigned int i = 0;
-	char *separator = ", ";
-	char current_format;
-
 	va_start(args, format);
 
-	while (format && format[i])
+	while (format[i])
 	{
-		current_format = format[i];
-
-		switch (current_format)
+		switch (format[i])
 		{
 			case 'c':
-				printf("%s%c", separator, va_arg(args, int));
+				printf(" %c ", va_arg(args, int));
 				break;
 
 			case 'i':
-				printf("%s%d", separator, va_arg(args, int));
+				printf(" %d ", va_arg(args, int));
 				break;
 
 			case 'f':
-				printf("%s%f", separator, va_arg(args, double));
+				printf(" %f ", va_arg(args, double));
 				break;
 
 			case 's':
+				s = va_arg(args, char *);
+				if (s == NULL)
 				{
-					char *str = va_arg(args, char *);
-
-					if (str == NULL)
-						str = "(nil)";
-					printf("%s%s", separator, str);
+					printf(" (nil) ");
+				}
+				else
+				{
+					printf(" %s ", s);
 				}
 				break;
 
@@ -48,7 +47,6 @@ void print_all(const char * const format, ...)
 				i++;
 				continue;
 		}
-
 		i++;
 	}
 

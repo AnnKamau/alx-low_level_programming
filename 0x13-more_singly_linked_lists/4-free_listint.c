@@ -7,9 +7,9 @@
 
 void free_listint(listint_t *head)
 {
-	listint_t *lie = 0;
+	listint_t *lie;
 
-	while (lie != NULL)
+	while (head != NULL)
 	{
 		lie = head;
 		head = head->next;

@@ -16,15 +16,16 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (win != NULL && lose != NULL && lose->next != NULL)
 	{
-		printf("[%p] %d\n", (void *)win, win->n);
-		note++;
 		win = win->next;
 		lose = lose->next->next;
+
+		printf("[%p] %d\n", (void *)win, win->n);
+		note++;
 
 		if (win == lose)
 		{
 			printf("-> [%p] %d\n", (void *)win, win->n);
-			printf("Loop detected, exit...\n");
+			printf("Infinite Loop detected, exit...\n");
 			exit(98);
 		}
 	}

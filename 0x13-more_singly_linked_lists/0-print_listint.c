@@ -9,12 +9,14 @@
 size_t print_listint(const listint_t *h)
 {
 	size_t bubble = 0;
+	listint *lead = head;
 
-	while (h != NULL)
+	while (lead != NULL)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
+		printf("%d\n", lead->n);
+		lead = lead->next;
 		bubble++;
 	}
+
 	return (bubble);
 }

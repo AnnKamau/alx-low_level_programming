@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - prints a listint_t link list
- * @head: pointer to the head of the lis
- * Return: the number of nodes, exit status 98 on function failure
+ * print_listint_safe - prints a listint_t link list safely.
+ * @head: pointer to the head of the list.
+ * Return: the number of nodes.
  */
 
 size_t print_listint_safe(const listint_t *head)
@@ -25,7 +25,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (win == lose)
 		{
 			printf("-> [%p] %d\n", (void *)win, win->n);
-			printf("Infinite Loop detected, exit...\n");
+			printf("Infinite Loop detected, exiting...\n");
 			exit(98);
 		}
 	}
@@ -34,5 +34,6 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %d\n", (void *)win, win->n);
 		note++;
 	}
+
 	return (note);
 }

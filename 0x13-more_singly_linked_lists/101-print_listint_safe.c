@@ -1,51 +1,5 @@
 #include "lists.h"
 
-size_t looped_listint_len(const listint_t *head);
-size_t print_listint_safe(const listint_t *head);
-
-/**
- * looped_listint_len - counts number of nodes
- * @head: pointer to the head of the list to check
- * Return: if list is not looped - 0. otherwise number of nodes
- */
-
-size_t looped_listint_len(const listint_t *head)
-{
-	const listint_t *tall, *height;
-	size_t note = 1;
-
-	if (head == NULL || head->next == NULL)
-		return (0);
-	tall = head->next;
-	height = (head->next)->next;
-
-	while (height)
-	{
-		if (tall == height)
-		{
-			tall = head;
-			while (tall != height)
-			{
-				note++;
-				tall = tall->next;
-				height = height->next;
-			}
-			tall = tall->next;
-
-			while (tall != height)
-			{
-				note++;
-				tall = tall->next;
-			}
-			return (note);
-		}
-		tall = tall->next;
-		height = (height->next)->next;
-	}
-	return (0);
-}
-
-
 
 /**
  * print_listint_safe - prints a listint_t link list safely.
@@ -55,26 +9,50 @@ size_t looped_listint_len(const listint_t *head)
 
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t note, ind = 0;
+	size_t note = 0;
+	const listint_t *slope_ptr = head, *flat_ptr = head;
 
-	note = looped_listint_len(head);
+	if (head == NULL)
+		return (0);
 
-	if (note == 0)
+	while (flat_ptr != NULL && flat_ptr->next != NULL)
 	{
-		for (; head != NULL; note++)
+		printf("[%p] %d\n", (void *)slope_ptr, slope_ptr->n);
+		note++;
+
+		slope_ptr = slope_ptr->next;
+		flat_ptr = flat_ptr->next->next;
+
+		if (slope_ptr == flat_ptr)
 		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
+			printf("-> [%p] %d\n", (void *)slope_ptr, slope_ptr->n);
+			break;
 		}
+	}
+	if (slope_ptr == flat_ptr)
+	{
+		slope_ptr = head;
+
+		while (slope_ptr != flat_ptr)
+		{
+			printf("[%p] %d\n", (void *)slope_ptr, slope_ptr->n);
+			note++;
+
+			slope_ptr = slope_ptr->next;
+			flat_ptr = flat_ptr->next;
+		}
+		printf("-> [%p] %d\n", (void *)slope_ptr, slope_ptr->n);
+		note++;
 	}
 	else
 	{
-		for (ind = 0; ind < note; ind++)
+		while (slope_ptr != NULL)
 		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
+			printf("[%p] %d\n", (void *)slope_ptr, slope_ptr->n);
+			note++;
+
+			slope_ptr = slope_ptr->next;
 		}
-		printf("[%p] %d\n", (void *)head, head->n);
 	}
 	return (note);
 }

@@ -15,35 +15,19 @@ size_t free_listint_safe(listint_t **h)
 		return (0);
 
 	slope = *h;
-	flat = *h;
-
-	while (slope != NULL && flat != NULL && flat->next != NULL)
+	while (slope != NULL)
 	{
-		slope = slope->next;
-		flat = flat->next->next;
-
-		if (slope == flat)
-		{
-			slope = *h;
-
-			while (slope != flat)
-			{
-				*h = slope->next;
-				free(slope);
-				slope = *h;
-				vice++;
-			}
-
-			*h = NULL;
-			return (vice);
-		}
-	}
-	while (*h != NULL)
-	{
-		slope = *h;
-		*h = slope->next;
+		flat = slope->next;
 		free(slope);
 		vice++;
+		slope = flat;
+
+		if (slope == *h)
+		{
+			*h = NULL;
+			break;
+		}
 	}
+
 	return (vice);
 }

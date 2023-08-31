@@ -8,24 +8,21 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int late = 1;
-	int y = 0;
+	unsigned long int late;
+	int y, limit = 0;
 
-	while (late <= n)
-		late <<= 1;
-
-	late >>= 1;
-
-	while (late > 0)
+	for (y = 63; y >= 0; y--)
 	{
-		if (n & late)
-			_putchar('1');
-		else
-			_putchar ('0');
-		late >>= 1;
-		y++;
-	}
+		late = n >> y;
 
-	if (y == 0)
+		if (late & 1)
+		{
+			_putchar('1');
+			limit++;
+		}
+		else if (limit)
+			_putchar ('0');
+	}
+	if (!limit)
 		_putchar('0');
 }

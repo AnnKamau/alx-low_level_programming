@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 	r = read(form, cute, 1024);
 	tee = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	do{
+	do {
 		if (form == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO,
@@ -90,8 +90,7 @@ int main(int argc, char *argv[])
 
 		r = read(form, cute, 1024);
 		tee = open(argv[2], O_WRONLY | O_APPEND);
-	}
-	while (r > 0);
+	} while (r > 0);
 
 	free(cute);
 	close_file(form);
